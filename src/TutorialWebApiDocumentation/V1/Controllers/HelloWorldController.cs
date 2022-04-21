@@ -4,14 +4,17 @@ using TutorialWebApiDocumentation.V1.DTOs;
 
 namespace TutorialWebApiDocumentation.V1.Controllers
 {
-[ApiController]
-[ApiVersion("1.0")]
-[Route("api/[controller]")]
-[Route("api/v{version:apiVersion}/[controller]")]
-[Consumes("application/json")]
-[Produces("application/json")]
-public class HelloWorldController : ControllerBase
-{
+    /// <summary>
+    /// This is a summary for the controller (just set the includeControllerXmlComments property of the IncludeXmlComments to true).
+    /// </summary>
+    [ApiController]
+    [ApiVersion("1.0")]
+    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
+    public class HelloWorldController : ControllerBase
+    {
         /// <summary>
         /// Get a list with all "<see cref="SampleResponse"/>" items.
         /// </summary>
@@ -60,7 +63,7 @@ public class HelloWorldController : ControllerBase
         }
 
 
-        
+
         /// <summary>
         /// Create a sample based on the requested data.
         /// </summary>

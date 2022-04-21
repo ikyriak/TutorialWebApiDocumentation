@@ -41,13 +41,13 @@ namespace TutorialWebApiDocumentation.Extensions
                 // Read more here: https://docs.microsoft.com/en-us/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-6.0&tabs=visual-studio#xml-comments
                 string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                options.IncludeXmlComments(xmlPath);
-                                
+                options.IncludeXmlComments(xmlPath, true);
+
                 // If we would like to provide security information about the authorization scheme that we are using (e.g. Bearer).
                 // Add Security information to each operation for bearer tokens and define the scheme.
                 options.OperationFilter<SecurityRequirementsOperationFilter>(true, "Bearer");
                 options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-                { 
+                {
                     Description = "Standard Authorization header using the Bearer scheme (JWT). Example: \"bearer {token}\"",
                     Name = "Authorization",
                     In = ParameterLocation.Header,
